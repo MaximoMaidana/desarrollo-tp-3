@@ -1,6 +1,7 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import traducciones from '../utils/traducciones'
 
 function PokemonCard ({pokemon}){
     const [datosPokemon, setDatosPokemon] = useState(pokemon.types ? pokemon : null)
@@ -25,9 +26,15 @@ function PokemonCard ({pokemon}){
                 <h3>{pokemon.name.toUpperCase()}</h3>
                 <p>{numPokedex}</p>
                 <div>
-                    {datosPokemon.types.map((item) =>(
-                        <span key={item.type.name}>{item.type.name}</span>
-                    ))}
+                    {datosPokemon.types.map((item) =>{
+                        const tipoIngles = item.type.name
+                        const tipoEspanol = traducciones[tipoIngles] || tipoIngles
+                        return (
+                        <span key={tipoIngles}>
+                            {tipoEspanol}
+                        </span>
+                        )
+                    })}
                 </div>
             </div>
         </Link>
