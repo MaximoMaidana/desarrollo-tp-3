@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import axios from "axios"
-import Index from "./components"
+import Index from "./pages/Index"
 
 function App(){
   return(
@@ -9,6 +9,7 @@ function App(){
       <BrowserRouter>
         <Routes>
           <Route path="/"  element={<Index />}/>
+          <Route path="/pokemon/:name"  element={<Index />}/>
         </Routes>
       </BrowserRouter>
     </div>
