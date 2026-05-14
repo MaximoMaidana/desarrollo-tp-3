@@ -1,14 +1,21 @@
 function PokemonCard ({pokemon}){
-    const urlPartes = pokemon.url.split("/")
-    const id = urlPartes[urlPartes.length - 2]
-    const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
+    let id;
 
-    return(
-        <div >
+    if (pokemon.id) {
+        id = pokemon.id;
+    } else {
+        const urlPartes = pokemon.url.split("/");
+        id = urlPartes[urlPartes.length - 2];
+    }
+
+    const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+
+    return (
+        <div className="card">
             <img src={imgUrl} alt={pokemon.name} />
-            <h3>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h3>
+            <h3>{pokemon.name.toUpperCase()}</h3>
         </div>
-    )
+    );
 }
 
 export default PokemonCard
