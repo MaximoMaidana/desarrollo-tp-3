@@ -37,6 +37,7 @@ function PokemonCard ({pokemon}){
                     })}
                 </div>
             </div>
+            <Link to={`/pokemon/${datosPokemon.name}/movimientos`}>movimientos</Link>
         </Link>
     );
 }
