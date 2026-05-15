@@ -1,6 +1,6 @@
 import FilaMoviento from "./FilaMovimiento"
 
-function TablaMovimientos ({movimientos, version}){
+function TablaMovimientos ({movimientos, version, metodo}){
     
     return(
         <div>
@@ -9,7 +9,8 @@ function TablaMovimientos ({movimientos, version}){
                     <FilaMoviento 
                         key={m.move.name} 
                         movimiento={m}
-                        version={version}    
+                        version={version} 
+                        metodo={metodo}   
                     />
                 ))}        
             </ul>

@@ -37,9 +37,10 @@ function PokemonCard ({pokemon}){
                     })}
                 </div>
             </div>
-            <Link to={`/pokemon/${datosPokemon.name}/movimientos`}>movimientos</Link>
+            <div><Link to={`/pokemon/${datosPokemon.name}/movimientos`}>movimientos</Link></div>
         </Link>
-    );
+       
+    )
 }
 
 export default PokemonCard

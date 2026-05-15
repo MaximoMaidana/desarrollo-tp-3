@@ -8,6 +8,7 @@ function Movimientos (){
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
     const [version, setVersion] = useState('scarlet-violet')
+    const [metodo, setMetodo] = useState('level-up')
     const [movimientos, setMovimiento] = useState([])
     const { name } = useParams(); 
 
@@ -31,7 +32,8 @@ function Movimientos (){
         setMovimiento (()=>{
             const resultado = pokemon.moves.filter (m =>{
                 return m.version_group_details.some(detalle => 
-                    detalle.version_group.name === version
+                    detalle.version_group.name === version &&
+                    detalle.move_learn_method.name === metodo
                 )   
             })
             return resultado
@@ -50,7 +52,11 @@ function Movimientos (){
     return(
         <div>
             <h1>Movimientos de {name}</h1>
-            <TablaMovimientos movimientos={movimientos} version={version}/>
+            <TablaMovimientos 
+                movimientos={movimientos} 
+                version={version}
+                metodo={metodo}
+            />
         </div>
     )
 }
