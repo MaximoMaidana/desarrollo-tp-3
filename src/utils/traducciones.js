@@ -1,4 +1,4 @@
-const traductorTipos = {
+const traducciones = {
     fire: "Fuego",
     water: "Agua",
     grass: "Planta",
@@ -16,7 +16,15 @@ const traductorTipos = {
     dark: "Siniestro",
     steel: "Acero",
     fairy: "Hada",
-    normal: "Normal"
+    normal: "Normal",
+
+    //Estadísticas base
+    hp: "PS",
+    attack: "Ataque",
+    defense: "Defensa",
+    "special-attack": "At. Especial",
+    "special-defense": "Def. Especial",
+    speed: "Velocidad",
 };
 
-export default traductorTipos
+export default traducciones;
