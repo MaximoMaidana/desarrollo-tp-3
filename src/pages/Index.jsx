@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 import PokemonGrid from "../components/PokemonGrid"
-import SearchBar from "../components/searchBar"
+import SearchBar from "../components/SearchBar"
 import Paginacion from "../components/Paginacion"
 
 function Index (){
